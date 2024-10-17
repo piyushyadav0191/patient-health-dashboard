@@ -30,7 +30,9 @@ export default function PatientList() {
 
   useEffect(() => {
     const fetchPatients = async () => {
-      const res = await axios.get(`${process.env.BACKEND_URL}/api/patients`);
+      const res = await axios.get(
+        `https://patient-health-dashboard.onrender.com/api/patients`
+      );
       setPatients(res.data);
     };
     fetchPatients();

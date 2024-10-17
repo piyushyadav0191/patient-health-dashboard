@@ -43,10 +43,13 @@ export default function PriorAuthorizationForm() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      await axios.post(`${process.env.BACKEND_URL}/api/authorizations`, {
-        ...formData,
-        patientId: id,
-      });
+      await axios.post(
+        `https://patient-health-dashboard.onrender.com/api/authorizations`,
+        {
+          ...formData,
+          patientId: id,
+        }
+      );
       toast({
         title: "Success",
         description: "Authorization request submitted successfully.",

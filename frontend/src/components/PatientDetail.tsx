@@ -48,12 +48,12 @@ export default function PatientDetail() {
    const fetchPatientData = async () => {
      try {
        const patientRes = await axios.get(
-         `${process.env.BACKEND_URL}/api/patients/${id}`
+         `https://patient-health-dashboard.onrender.com/api/patients/${id}`
        );
        setPatient(patientRes.data);
 
        const authRes = await axios.get(
-         `${process.env.BACKEND_URL}/api/authorizations?patientId=${id}`
+         `https://patient-health-dashboard.onrender.com/api/authorizations?patientId=${id}`
        );
        setAuthRequests(authRes.data as AuthorizationRequest[]);
      } catch (error) {
